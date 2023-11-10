@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiRefuel.MainPage">
+
+    <ContentPage Title="Tankkaus">
+        <ScrollView>
+            <StackLayout>
+
+                <Frame BackgroundColor="DarkOliveGreen" Padding="16">
+
+                    <Label Text="Refueling" HorizontalTextAlignment="Center"
+                   TextColor="WhiteSmoke" FontSize="24"/>
+
+                </Frame>
+
+
+
+
+                <StackLayout  HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand">
+
+                    <HorizontalStackLayout Padding="20" >
+
+                        <Picker x:Name="stationPicker" Title= "Select Station" Margin="10" SelectedIndexChanged="stationPicker_SelectedIndexChanged">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Station 1</x:String>
+                                <x:String>Station 2</x:String>
+                                <x:String>Station 3</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+
+
+                        <Picker x:Name="pricePicker" Title="Select Price"  Margin="10" SelectedIndexChanged="pricePicker_SelectedIndexChanged">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>20 €</x:String>
+                                <x:String>40 €</x:String>
+                                <x:String>60 €</x:String>
+                                <x:String>90 €</x:String>
+                                <x:String>120 €</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+
+                        <Picker x:Name="petrolTypePicker" Title="Select Petrol type"  Margin="10" SelectedIndexChanged="petrolTypePicker_SelectedIndexChanged">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>E 95</x:String>
+                                    <x:String>E 98</x:String>
+                                    <x:String>Diesel</x:String>
+                                    
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+                    </HorizontalStackLayout>
+
+
+                    <Frame BackgroundColor="LightGrey" Padding="16" CornerRadius="0">
+                        <Label Text="Fill in the form" HorizontalTextAlignment="Center" TextColor="DarkSlateGray" FontSize="14"/>
+                    </Frame>
+
+
+                   
+
+                   
+                    <StackLayout Margin="10">
+
+                        <!--Adding form-->
+                        <VerticalStackLayout>
+                            <Entry x:Name="inputKentta1" WidthRequest="300" Margin="20" Placeholder="Vehicle" />
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout>
+                        <Entry x:Name="inputKentta2" WidthRequest="300" Margin="20" Placeholder="Plate number" />
+                        </VerticalStackLayout>
+                        
+                        <VerticalStackLayout>
+
+                            <Entry x:Name="inputKentta3" WidthRequest="300" Margin="20" Placeholder="Firstname"></Entry>
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout>
+
+                            <Entry x:Name="inputKentta4" WidthRequest="300" Margin="20" Placeholder="Lastname"></Entry>
+                        </VerticalStackLayout>
+
+
+
+                        <HorizontalStackLayout>
+                        <!--Save-->
+                            <Button x:Name="SaveBtn" WidthRequest="180" Margin="10" Clicked="SaveBtn_Clicked" Text="Save" />
+
+                        <!--Delete-->
+                            <Button x:Name="DeleteBtn" WidthRequest="180" Margin="10" Text="Delete" Clicked="DeleteBtn_Clicked" />
+                        </HorizontalStackLayout>
+
+                        <Frame BackgroundColor="Gray">
+                            <Label x:Name="outputLabel" Margin="10" IsVisible="true" />
+                        </Frame>
+
+                        <!--Confirm-->
+
+                        <Button Text ="Confirm" Margin="10" Clicked="ConfirmButtonClicked" />
+
+                    </StackLayout>
+
+
+
+
+
+                </StackLayout>
+
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage>
+    
+    
+    
+</TabbedPage>
